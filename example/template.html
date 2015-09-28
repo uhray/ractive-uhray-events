@@ -1,0 +1,83 @@
+<style>
+
+  body div.myclassname .rv-message {
+    background: #E6E6E6;
+    color: #000;
+  }
+
+  .hidden { display: none !important; }
+
+  label.validator-child-invalid {
+    color: #B94A48;
+  }
+
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  div.dragging {
+    position: fixed;
+    top: -1000;
+    left: -1000;
+    transform: translate(-5px, -50%);
+    cursor: pointer;
+    color: #000;
+    background: #FFF;
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: -ms-grabbing;
+    box-shadow: .5px .5px 2px 0px rgba(0,0,0,0.75);
+    padding: 5px 12px;
+    z-index: 3;
+  }
+
+</style>
+
+<hr/>
+<h3>Tap:</h3>
+<a href="javacript:;" on-tap="add('tapCount', 1)">click</a>&nbsp;&nbsp;{{tapCount}}
+<br/>
+<hr/>
+
+<div class="noselect">
+  <h3>Drag:</h3>
+  <b on-startdrag="set('dragging', true)"
+     on-dragmove="move"
+     on-stopdrag="set('dragging', false)">
+    dragThis
+  </b>
+  <br/> <br/>
+
+  {{#if dragging}}
+    <div class="dragging"
+         style="left:{{pageX}}px;top:{{pageY}}px">
+      dragging
+    </div>
+  {{/if}}
+
+  <div style="width: 200px; margin: 0 auto; height: 200px; border: dashed 2px #000;
+             {{#if dragOver}}border-color: red;{{/if}}"
+       on-dragover="set('dragOver', true)"
+       on-dragleave="set('dragOver', false)"
+       on-dragdrop="dragDrop">
+    <br/> <br/>
+    <b>{{#if dragging}}Drop Here{{else}}Start Dragging{{/if}}</b>
+    <br/>
+    <br/>
+    <b>{{dragCount}} dropped</b>
+  </div>
+
+  <br/>
+  <hr/>
+
+  <h3>Enter:</h3>
+  <input on-enter="onEnter"
+         placeholder="type and hit enter">
+  <br/> <br/>
+</div>

@@ -1,0 +1,26 @@
+{
+  "name": "ractive-uhray-events",
+  "authors": [
+    "Uhray Team <team@uhray.com>"
+  ],
+  "main": "dist/events.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "example",
+    "build",
+    "lib",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "ractive": "~0.7.3",
+    "rv": "~0.1.8"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.15",
+    "almond": "~0.3.0"
+  }
+}
