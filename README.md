@@ -106,7 +106,7 @@ Below is an example of the HTML events. See the example file for more informatio
 Configurations:
 
 ```js
-config = {
+{
   downBuffer: 100  // minimum time with mousedown before it's a 'dragstart' event
 }
 ```
@@ -117,7 +117,7 @@ Very simple. This event on inputs or textareas when the "enter" key is pressed.
 Configurations:
 
 ```js
-config = {
+{
   eventType: 'keypress'  // the event type to listen for. Could be keydown or keyup as well
 };
 ```
